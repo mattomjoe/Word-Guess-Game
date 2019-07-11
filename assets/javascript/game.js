@@ -20,7 +20,10 @@ var currentWord = currentWord[Math.floor(Math.random()*currentWord.length)]; //m
 
 //User enters letter guess for currentWord random selection
 
-var userGuess = event.key;
+document.onkeyup = function(event) {
+    var userGuess = event.key;
+
+}
 
 //If user entry appears in currentWord
 
