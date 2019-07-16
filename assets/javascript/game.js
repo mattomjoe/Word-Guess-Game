@@ -4,7 +4,7 @@ object.onkeyup = function(event){ //taken from r-p-s video
 
 };
 
-//Create an array that lists out all of the word options.
+//Create an array that lists all of the word options.
 
 var currentWord = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Smithers", "Burns", "Wiggum", "Apu", "Moe", "Skinner", "Barney", "Krusty", "Brockman", "Carl", "Lou", "Milhouse", "Ned"];
 
