@@ -1,3 +1,13 @@
 .jumbotron {
     background: #000000;
 }
+
+.Simpsons-family {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.Game-Title {
+    align-content: center;
+}
