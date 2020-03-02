@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    console.log("I see you!");
+
     //Create an array that lists all of the word options.
     var currentWord = [
         "Homer", 
@@ -22,16 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ned"
     ];
 
+    console.log(currentWord);
+
     // Creating variables to hold the number of wins, current word, number of guesses left, and letters already guessed.
     var wins = 0;
     var guessesLeft = 15;
     var guessedSofar = []; // Blank array to hold user guesses
+
+    console.log(wins);
+    console.log(guessesLeft);
+    console.log(guessedSofar);
 
     // Create variables that hold references to the places in HTML where we want to display things.
     var directionsText = document.getElementById("directions-text");
     var winsText = document.getElementById("wins-text");
     var guessesLeftText = document.getElementById("guesses-left-text");
     var guessSoFarText = document.getElementById("guess-so-far-text");
+
+    winsText.innerHTML = wins;
 
     function game() {
         var guessesLeft = 15;
