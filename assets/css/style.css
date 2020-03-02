@@ -2,6 +2,11 @@
     background: #000000;
 }
 
+.Game-Title {
+    text-align: center;
+    color: white;
+}
+
 .Simpsons-family {
     display:block;
     margin-left:auto;
