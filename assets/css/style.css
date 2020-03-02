@@ -16,3 +16,7 @@
 .Game-Title {
     align-content: center;
 }
+
+.currentRandomWord {
+    font-size: x-large;
+}

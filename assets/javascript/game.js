@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     winsText.innerHTML = wins;
+    guessesLeftText.innerHTML = guessesLeft;
+    
 
     var randomSimpsonName = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
 
