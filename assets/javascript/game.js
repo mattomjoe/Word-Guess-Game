@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("I see you!");
 
     //Create an array that lists all of the word options.
-    var currentWord = [
+    var simpsonsArray = [
         "Homer", 
         "Marge", 
         "Bart", 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ned"
     ];
 
-    console.log(currentWord);
+    console.log(simpsonsArray);
 
     // Creating variables to hold the number of wins, current word, number of guesses left, and letters already guessed.
     var wins = 0;
@@ -37,11 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create variables that hold references to the places in HTML where we want to display things.
     var directionsText = document.getElementById("directions-text");
+    
     var winsText = document.getElementById("wins-text");
+    var currentRandomWord = document.getElementById("currentRandomWord");
     var guessesLeftText = document.getElementById("guesses-left-text");
     var guessSoFarText = document.getElementById("guess-so-far-text");
 
+
     winsText.innerHTML = wins;
+
+    var randomSimpsonName = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
+
+    currentRandomWord.innerHTML = randomSimpsonName;
+
+    console.log(randomSimpsonName);
+
+
 
     function game() {
         var guessesLeft = 15;
@@ -57,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     //Randomly choose a name from the array. This is the computer's choice for the user to guess.
-    var computerChoice = currentWord[Math.floor(Math.random() * currentWord.length)];
+    var computerChoice = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
 
     //Dashes appear below "Current Word", one dash per letter
     var answerArray = [];
-    for (var i = 0; i < currentWord.length; i++) {
+    for (var i = 0; i < simpsonsArray.length; i++) {
         answerArray[i] = "_";
     }
 
@@ -71,13 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//User enters letter guess for currentWord random selection
+//User enters letter guess for simpsonsArray random selection
 
 document.onkeyup = function(event) {
     var userGuess = event.key;
 
 }
 
-//If user entry appears in currentWord
+//If user entry appears in simpsonsArray
 
 })
