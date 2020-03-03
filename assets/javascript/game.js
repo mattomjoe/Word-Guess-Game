@@ -39,17 +39,33 @@ document.addEventListener('DOMContentLoaded', function() {
     winsText.innerHTML = wins;
     guessesLeftText.innerHTML = guessesLeft;
     
-
+    // Randomly select Simpson name from array for user to guess
     var randomSimpsonName = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
 
-    currentRandomWord.innerHTML = randomSimpsonName;
+    // currentRandomWord.innerHTML = randomSimpsonName;
 
     // Below code based on empty string separator (https://www.dyn-web.com/javascript/strings/split.php)
     var randomSimpsonNameArray = randomSimpsonName.split('');
 
-    console.log(randomSimpsonNameArray);
+    // currentRandomWord.innerHTML = randomSimpsonNameArray;
 
-    console.log(simpsonsArray);
+    // console.log(randomSimpsonNameArray);
+
+    // console.log(simpsonsArray);
+
+    // For loop prints dashes to screen based on number of letters in random word
+    
+    var blanksArray = []; // THIS VAR NEEDS TO STAY OUTSIDE OF FOR LOOP OTHERWISE ARRAY WILL RESET EVERY PASS!!!
+    var blankSpace ="";
+
+    for (var i = 0; i < randomSimpsonNameArray.length; i++) {
+        console.log(randomSimpsonNameArray[i]);      
+        blanksArray.push("_ ");
+        console.log(blanksArray);
+        currentRandomWord.innerHTML = blanksArray.join("");
+    }
+
+   
 
     
 
