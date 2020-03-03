@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Creating variables to hold the number of wins, current word, number of guesses left, and letters already guessed.
     var wins = 0;
-    var guessesLeft = 15;
+    var guessesLeft = 6;
     var guessedSofar = []; // Blank array to hold user guesses
 
     // Create variables that hold references to the places in HTML where we want to display things.
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var winsText = document.getElementById("wins-text");
     var currentRandomWord = document.getElementById("currentRandomWord");
     var guessesLeftText = document.getElementById("guesses-left-text");
-    var guessSoFarText = document.getElementById("guess-so-far-text");
+    var guessSoFarText = document.getElementById("letters-used-text");
 
 
     winsText.innerHTML = wins;
@@ -56,12 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // For loop prints dashes to screen based on number of letters in random word
     
     var blanksArray = []; // THIS VAR NEEDS TO STAY OUTSIDE OF FOR LOOP OTHERWISE ARRAY WILL RESET EVERY PASS!!!
-    var blankSpace ="";
 
     for (var i = 0; i < randomSimpsonNameArray.length; i++) {
-        console.log(randomSimpsonNameArray[i]);      
+        // console.log(randomSimpsonNameArray[i]);      
         blanksArray.push("_ ");
-        console.log(blanksArray);
+        // console.log(blanksArray);
         currentRandomWord.innerHTML = blanksArray.join("");
     }
 
@@ -72,28 +71,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function game() {
-        var guessesLeft = 15;
-        guessedSofar = []; // Blank array to hold user guesses
+        var guessesLeft = 6;
+        
     }
+
+    guessedSofar = []; // Blank array to hold user guesses
 
     //Get user input using key press. Store info in variable for later use.
     //This function is run whenever the user presses a key.
-    document.onkeyup = function(event){ // onkeyup is the event listener. "event" is not a method, it is an object passed in implicitly.
+    document.onkeyup = function(event) { // onkeyup is the event listener. "event" is not a method, it is an object passed in implicitly.
+        // alert("You pressed a key!");
         var userGuess = event.key; // Event is being passed, key stroke is the part of the event that is captured. "key" is a property of the object, "event"
+        console.log(userGuess);
+        guessedSofar.push(userGuess);
+        guessSoFarText.innerHTML = guessedSofar.join(" ");
+
     }
 
     
 
     //Randomly choose a name from the array. This is the computer's choice for the user to guess.
-    var computerChoice = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
+    // var computerChoice = simpsonsArray[Math.floor(Math.random() * simpsonsArray.length)];
 
     //Dashes appear below "Current Word", one dash per letter
-    var answerArray = [];
+/*     var answerArray = [];
     for (var i = 0; i < simpsonsArray.length; i++) {
         answerArray[i] = "_";
     }
 
-    var remainingLetters = computerChoice.length;
+    var remainingLetters = computerChoice.length; */
 
 
 
@@ -101,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //User enters letter guess for simpsonsArray random selection
 
-document.onkeyup = function(event) {
+/* document.onkeyup = function(event) {
     var userGuess = event.key;
 
-}
+} */
 
 //If user entry appears in simpsonsArray
 
-})
+});
